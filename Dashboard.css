@@ -1,0 +1,508 @@
+/* ============================================ */
+/* 📊 DASHBOARD.CSS - LAVENDER THEME */
+/* ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================ */
+/* 🎨 COLOR VARIABLES */
+/* ============================================ */
+
+:root {
+  /* Lavender Palette */
+  --lavender-50: #faf5ff;
+  --lavender-100: #f3e8ff;
+  --lavender-200: #e9d5ff;
+  --lavender-300: #d8b4fe;
+  --lavender-400: #c084fc;
+  --lavender-500: #a855f7;
+  --lavender-600: #9333ea;
+  --lavender-700: #7e22ce;
+  --lavender-800: #6b21a8;
+  --lavender-900: #581c87;
+  
+  /* Status Colors */
+  --red-light: #fef2f2;
+  --red-border: #fecaca;
+  --red-text: #b91c1c;
+  --red-icon: #ef4444;
+  
+  --blue-light: #eff6ff;
+  --blue-border: #bfdbfe;
+  --blue-text: #1e40af;
+  --blue-icon: #3b82f6;
+  
+  --green-light: #f0fdf4;
+  --green-border: #bbf7d0;
+  --green-text: #166534;
+  --green-icon: #22c55e;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(168, 85, 247, 0.08);
+  --shadow-md: 0 4px 16px rgba(168, 85, 247, 0.12);
+  --shadow-lg: 0 8px 24px rgba(168, 85, 247, 0.15);
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================ */
+/* 🌟 GLOBAL STYLES */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: linear-gradient(135deg, var(--lavender-50) 0%, var(--lavender-100) 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ============================================ */
+/* 📦 DASHBOARD CONTAINER */
+/* ============================================ */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--lavender-50) 0%, var(--lavender-100) 100%);
+  padding: 2rem;
+  position: relative;
+}
+
+/* Soft Background Pattern */
+.dashboard-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--lavender-200) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--lavender-700);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Dashboard Subtitle */
+.dashboard-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--lavender-700);
+  margin: 2rem 0 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================ */
+/* 🃏 CARDS GRID */
+/* ============================================ */
+
+.dashboard-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================ */
+/* 🎴 CARD COMPONENT */
+/* ============================================ */
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--lavender-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--lavender-300);
+}
+
+/* Card Icon */
+.card-icon {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Icon Colors */
+.card-icon-purple {
+  background: var(--lavender-100);
+  color: var(--lavender-600);
+}
+
+.card-icon-red {
+  background: var(--red-light);
+  color: var(--red-icon);
+}
+
+.card-icon-blue {
+  background: var(--blue-light);
+  color: var(--blue-icon);
+}
+
+.card-icon-green {
+  background: var(--green-light);
+  color: var(--green-icon);
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  color: var(--lavender-500);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Value Colors */
+.card-value-purple {
+  color: var(--lavender-700);
+}
+
+.card-value-red {
+  color: var(--red-text);
+}
+
+.card-value-blue {
+  color: var(--blue-text);
+}
+
+.card-value-green {
+  color: var(--green-text);
+}
+
+/* ============================================ */
+/* 📁 CATEGORY GRID */
+/* ============================================ */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Category Card */
+.category-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--lavender-200);
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--lavender-300);
+}
+
+/* Category Title */
+.category-title {
+  font-weight: 700;
+  color: var(--lavender-700);
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--lavender-400), var(--lavender-500));
+  border-radius: 2px;
+}
+
+/* Category Info */
+.category-info {
+  color: var(--lavender-600);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-info:last-child {
+  margin-bottom: 0;
+}
+
+.category-info::before {
+  content: '•';
+  color: var(--lavender-400);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* ============================================ */
+/* 📱 RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .dashboard-container {
+    padding: 1.5rem;
+  }
+  
+  .dashboard-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .card-value {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1.125rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+  
+  .category-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 479px) {
+  .dashboard-container {
+    padding: 0.75rem;
+  }
+  
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .category-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+  }
+  
+  .category-title {
+    text-align: center;
+  }
+  
+  .category-info {
+    justify-content: center;
+  }
+}
+
+/* ============================================ */
+/* ♿ ACCESSIBILITY */
+/* ============================================ */
+
+/* Focus Visible */
+*:focus-visible {
+  outline: 3px solid var(--lavender-400);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .category-card,
+  .card-icon {
+    transition: none !important;
+  }
+  
+  .card:hover,
+  .category-card:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================ */
+/* 🖨️ PRINT STYLES */
+/* ============================================ */
+
+@media print {
+  .dashboard-container {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .card,
+  .category-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+  
+  .dashboard-container::before {
+    display: none;
+  }
+}
+
+/* ============================================ */
+/* 🎨 ANIMATIONS */
+/* ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-cards-grid > * {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.dashboard-cards-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-cards-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-cards-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.dashboard-cards-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+.category-grid > * {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* ============================================ */
+/* 🎪 CUSTOM SCROLLBAR */
+/* ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lavender-100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--lavender-400), var(--lavender-500));
+  border-radius: 10px;
+  border: 2px solid var(--lavender-100);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--lavender-500), var(--lavender-600));
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lavender-400) var(--lavender-100);
+}
+
+/* ============================================ */
+/* ✨ UTILITY CLASSES (Optional) */
+/* ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* ============================================ */
+/* 🌸 END OF DASHBOARD STYLES */
+/* ============================================ */
